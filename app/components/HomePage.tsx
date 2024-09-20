@@ -3,18 +3,19 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { HeaderComponent } from '../../components/components-header'
+import { FooterComponent } from '../../components/components-footer'
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#F9E4B7]">
+    <div className="flex flex-col min-h-screen bg-[#F9E4B7]">
       <HeaderComponent />
-      <main className="container mx-auto mt-8 px-4">
+      <main className="flex-grow container mx-auto mt-8 px-4">
         <section className="relative h-[70vh] rounded-lg overflow-hidden">
           <Image
             src="/images/oaxaca-background.jpg"
             alt="Colorful Oaxacan doors"
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: 'cover' }}
           />
           <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
             <div className="text-center">
@@ -36,8 +37,8 @@ export default function HomePage() {
                   <Image
                     src={`/images/product-${item}.jpg`}
                     alt={`Product ${item}`}
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
                 <div className="p-4">
@@ -55,6 +56,7 @@ export default function HomePage() {
           </div>
         </section>
       </main>
+      <FooterComponent />
     </div>
   )
 }
