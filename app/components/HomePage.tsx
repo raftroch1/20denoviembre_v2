@@ -2,10 +2,12 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { HeaderComponent } from '../../components/components-header'
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#F9E4B7]">
+      <HeaderComponent />
       <main className="container mx-auto mt-8 px-4">
         <section className="relative h-[70vh] rounded-lg overflow-hidden">
           <Image
